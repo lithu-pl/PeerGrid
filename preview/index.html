@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PeerGrid - Interactive Mobile App Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="desktop-wrapper">
+    <!-- Left Info Panel -->
+    <div class="info-sidebar">
+      <div class="brand-badge">
+        <i class="fa-solid fa-circle-nodes"></i>
+        <span>PeerGrid Prototype</span>
+      </div>
+      <h1>Flutter Frontend Showcase</h1>
+      <p class="subtitle">Complete implementation following <strong>Doc1.pdf</strong> design and <strong>PRD.md</strong> requirements.</p>
+
+      <div class="screen-selector">
+        <h3>Direct Screen Jump</h3>
+        <button class="screen-btn active" data-screen="home"><i class="fa-solid fa-house"></i> 1. Home Dashboard</button>
+        <button class="screen-btn" data-screen="events"><i class="fa-solid fa-calendar-days"></i> 2. Campus Events</button>
+        <button class="screen-btn" data-screen="community"><i class="fa-solid fa-users"></i> 3. Communities & Feed</button>
+        <button class="screen-btn" data-screen="predict"><i class="fa-solid fa-wand-magic-sparkles"></i> 4. Predict Your College</button>
+        <button class="screen-btn" data-screen="profile"><i class="fa-solid fa-user"></i> 5. Student Profile</button>
+        <button class="screen-btn" data-screen="college-detail"><i class="fa-solid fa-graduation-cap"></i> 6. College & Reviews (CET)</button>
+        <button class="screen-btn" data-screen="auth"><i class="fa-solid fa-arrow-right-to-bracket"></i> 7. Auth / Sign In</button>
+      </div>
+
+      <div class="info-card">
+        <h4><i class="fa-solid fa-circle-check" style="color: #00bcd4;"></i> UI Fidelity Guarantee</h4>
+        <p>Colors (#00BCD4 cyan palette), typography (Poppins), rounded radii (18-24px), and mock data exactly replicate the original design document.</p>
+      </div>
+    </div>
+
+    <!-- Mobile Device Mockup Frame -->
+    <div class="phone-frame">
+      <div class="phone-speaker"></div>
+      <div class="phone-screen">
+        <!-- Status Bar -->
+        <div class="status-bar">
+          <span class="status-time">9:41</span>
+          <div class="status-icons">
+            <i class="fa-solid fa-signal"></i>
+            <i class="fa-solid fa-wifi"></i>
+            <i class="fa-solid fa-battery-full"></i>
+          </div>
+        </div>
+
+        <!-- Scrollable Screen Content Container -->
+        <div id="screen-container" class="screen-viewport">
+
+          <!-- 1. HOME SCREEN (Doc1.pdf Screen 1) -->
+          <div id="screen-home" class="app-screen active">
+            <!-- Header -->
+            <div class="home-header">
+              <div class="user-greeting">
+                <h2>Hi, Lithu P L</h2>
+                <span class="subtext">Welcome to PeerGrid</span>
+              </div>
+              <div class="avatar-ring nav-to" data-target="profile">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200" alt="Avatar">
+              </div>
+            </div>
+
+            <!-- Hero Banner -->
+            <div class="hero-banner nav-to" data-target="colleges">
+              <div class="hero-text">
+                <h3>Discover your<br>future college</h3>
+                <span class="hero-tag">Explore Now <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+              <div class="hero-illus">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+            </div>
+
+            <!-- Quick Action Icons Row -->
+            <div class="action-dock">
+              <div class="dock-item nav-to" data-target="colleges">
+                <div class="dock-icon"><i class="fa-solid fa-school"></i></div>
+                <span>Colleges</span>
+              </div>
+              <div class="dock-item nav-to" data-target="events">
+                <div class="dock-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                <span>Events</span>
+              </div>
+              <div class="dock-item nav-to" data-target="community">
+                <div class="dock-icon"><i class="fa-solid fa-users"></i></div>
+                <span>Community</span>
+              </div>
+              <div class="dock-item nav-to" data-target="predict">
+                <div class="dock-icon"><i class="fa-solid fa-microchip"></i></div>
+                <span>Predictor</span>
+              </div>
+            </div>
+
+            <!-- Top Colleges Section Header -->
+            <div class="section-title-row">
+              <h4>TOP COLLEGES</h4>
+              <a href="#" class="nav-to link-more" data-target="colleges">View all</a>
+            </div>
+
+            <!-- Top Colleges List -->
+            <div class="college-cards-list">
+              <!-- College 1: CET Trivandrum -->
+              <div class="college-card nav-to" data-target="college-detail">
+                <div class="card-thumb">
+                  <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=300" alt="CET">
+                </div>
+                <div class="card-body">
+                  <h5>College of Engineering Trivandrum CET</h5>
+                  <div class="card-meta">
+                    <span>120 Reviews</span>
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.8</span>
+                  </div>
+                  <div class="card-location">
+                    <i class="fa-solid fa-location-dot"></i> Thiruvananthapuram
+                  </div>
+                </div>
+              </div>
+
+              <!-- College 2: RIT Kottayam -->
+              <div class="college-card nav-to" data-target="college-detail">
+                <div class="card-thumb">
+                  <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=300" alt="RIT">
+                </div>
+                <div class="card-body">
+                  <h5>Rajiv Gandhi Institute of Technology</h5>
+                  <div class="card-meta">
+                    <span>95 Reviews</span>
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.5</span>
+                  </div>
+                  <div class="card-location">
+                    <i class="fa-solid fa-location-dot"></i> Kottayam
+                  </div>
+                </div>
+              </div>
+
+              <!-- College 3: Poonjar -->
+              <div class="college-card nav-to" data-target="college-detail">
+                <div class="card-thumb">
+                  <img src="https://images.unsplash.com/photo-1592280771190-3e2e4d571952?w=300" alt="CEP">
+                </div>
+                <div class="card-body">
+                  <h5>College of Engineering Poonjar</h5>
+                  <div class="card-meta">
+                    <span>45 Reviews</span>
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                  </div>
+                  <div class="card-location">
+                    <i class="fa-solid fa-location-dot"></i> Poonjar, Kottayam
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. EVENTS SCREEN (Doc1.pdf Screen 2) -->
+          <div id="screen-events" class="app-screen">
+            <div class="screen-appbar">
+              <button class="back-btn nav-to" data-target="home"><i class="fa-solid fa-chevron-left"></i></button>
+              <h3>Events</h3>
+              <button class="icon-btn"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-input-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Search events..." id="events-search-input">
+              <i class="fa-solid fa-sliders"></i>
+            </div>
+
+            <div class="section-title-row">
+              <h4>Upcoming Events</h4>
+            </div>
+
+            <!-- Event Cards -->
+            <div class="events-list">
+              <!-- Event 1: TechFest -->
+              <div class="event-card">
+                <div class="event-poster purple">
+                  <span class="poster-title">TECH FEST</span>
+                  <span class="poster-tag">&lt;/&gt;</span>
+                </div>
+                <div class="event-details">
+                  <div class="event-header-row">
+                    <h5>TechFest</h5>
+                    <span class="host-pill">RIT Kottayam</span>
+                  </div>
+                  <div class="event-row"><i class="fa-regular fa-calendar"></i> 14 Aug 2026</div>
+                  <div class="event-row"><i class="fa-regular fa-clock"></i> 10:00 AM</div>
+                  <div class="event-row"><i class="fa-solid fa-location-dot"></i> Main Auditorium</div>
+                  <div class="event-action">
+                    <button class="btn-register" onclick="toggleRegister(this, 'TechFest')">Register</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Event 2: Nexora -->
+              <div class="event-card">
+                <div class="event-poster gold">
+                  <span class="poster-title">NEXORA</span>
+                  <span class="poster-tag">2026</span>
+                </div>
+                <div class="event-details">
+                  <div class="event-header-row">
+                    <h5>Nexora</h5>
+                    <span class="host-pill">CET Trivandrum</span>
+                  </div>
+                  <div class="event-row"><i class="fa-regular fa-calendar"></i> 21 Aug 2026</div>
+                  <div class="event-row"><i class="fa-regular fa-clock"></i> 11:00 AM</div>
+                  <div class="event-row"><i class="fa-solid fa-location-dot"></i> Open Stage</div>
+                  <div class="event-action">
+                    <button class="btn-register registered" onclick="toggleRegister(this, 'Nexora')">Registered</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Event 3: InnovateX -->
+              <div class="event-card">
+                <div class="event-poster purple">
+                  <span class="poster-title">INNOVATEX</span>
+                  <span class="poster-tag">AI/ML</span>
+                </div>
+                <div class="event-details">
+                  <div class="event-header-row">
+                    <h5>InnovateX</h5>
+                    <span class="host-pill">MEC Ernakulam</span>
+                  </div>
+                  <div class="event-row"><i class="fa-regular fa-calendar"></i> 05 Sep 2026</div>
+                  <div class="event-row"><i class="fa-regular fa-clock"></i> 09:30 AM</div>
+                  <div class="event-row"><i class="fa-solid fa-location-dot"></i> Seminar Hall 1</div>
+                  <div class="event-action">
+                    <button class="btn-register" onclick="toggleRegister(this, 'InnovateX')">Register</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. COMMUNITY SCREEN (Doc1.pdf Screen 3) -->
+          <div id="screen-community" class="app-screen">
+            <div class="screen-appbar">
+              <button class="back-btn nav-to" data-target="home"><i class="fa-solid fa-chevron-left"></i></button>
+              <h3>Community</h3>
+              <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-input-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Search communities...">
+            </div>
+
+            <!-- Quick Post Box -->
+            <div class="quick-post-card">
+              <div class="post-input-row">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200" alt="Avatar" class="avatar-sm">
+                <textarea id="feed-post-text" placeholder="What's happening on your campus?" rows="2"></textarea>
+              </div>
+              <div class="post-footer-row">
+                <div class="post-attachments">
+                  <i class="fa-regular fa-image"></i>
+                  <i class="fa-solid fa-hashtag"></i>
+                </div>
+                <button class="btn-post" id="btn-submit-post">Post</button>
+              </div>
+            </div>
+
+            <div class="section-title-row">
+              <h4>communities</h4>
+            </div>
+
+            <!-- Communities List -->
+            <div class="community-list">
+              <!-- IEEE -->
+              <div class="community-item">
+                <div class="comm-icon ieee"><i class="fa-solid fa-bolt"></i></div>
+                <div class="comm-info">
+                  <h5>IEEE</h5>
+                  <p>Technical community for engineering & tech.</p>
+                </div>
+                <button class="btn-join joined" onclick="toggleJoin(this)">Joined</button>
+              </div>
+
+              <!-- TinkerHub -->
+              <div class="community-item">
+                <div class="comm-icon tinkerhub"><i class="fa-solid fa-code"></i></div>
+                <div class="comm-info">
+                  <h5>TinkerHub</h5>
+                  <p>Peer-to-peer student tech learning network.</p>
+                </div>
+                <button class="btn-join" onclick="toggleJoin(this)">Join</button>
+              </div>
+
+              <!-- EDC -->
+              <div class="community-item">
+                <div class="comm-icon edc"><i class="fa-solid fa-lightbulb"></i></div>
+                <div class="comm-info">
+                  <h5>EDC</h5>
+                  <p>Entrepreneurship Development Cell.</p>
+                </div>
+                <button class="btn-join" onclick="toggleJoin(this)">Join</button>
+              </div>
+            </div>
+
+            <div class="section-title-row" style="margin-top: 20px;">
+              <h4>Campus Feed</h4>
+            </div>
+
+            <div id="posts-feed" class="posts-feed-container">
+              <!-- Post 1 -->
+              <div class="feed-card">
+                <div class="feed-author-row">
+                  <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200" alt="Arjun">
+                  <div>
+                    <h6>Arjun S</h6>
+                    <span>CET Trivandrum • 2h ago</span>
+                  </div>
+                </div>
+                <p class="feed-body">Registrations for Nexora 2026 hackathon are now open! Check the Events tab to register your team!</p>
+                <div class="feed-reactions">
+                  <span class="reaction-btn" onclick="toggleLike(this)"><i class="fa-regular fa-thumbs-up"></i> 34</span>
+                  <span class="reaction-btn"><i class="fa-regular fa-comment"></i> 12</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. PREDICT YOUR COLLEGE (Doc1.pdf Screen 4) -->
+          <div id="screen-predict" class="app-screen">
+            <div class="screen-appbar">
+              <button class="back-btn nav-to" data-target="home"><i class="fa-solid fa-chevron-left"></i></button>
+              <h3>Perdict your college</h3>
+              <button class="icon-btn"><i class="fa-solid fa-clock-rotate-left"></i></button>
+            </div>
+
+            <!-- Predict Form Card -->
+            <div class="predict-form-card">
+              <h4>Enter Your Details</h4>
+              <div class="form-group">
+                <label>Exam</label>
+                <select id="pred-exam">
+                  <option value="KEAM">KEAM</option>
+                  <option value="JEE Main">JEE Main</option>
+                  <option value="CUET">CUET</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Score/Rank</label>
+                <input type="number" id="pred-rank" value="15000" placeholder="e.g. 15000">
+              </div>
+              <div class="form-group">
+                <label>Category</label>
+                <select id="pred-cat">
+                  <option value="General">General</option>
+                  <option value="OBC">OBC</option>
+                  <option value="SC">SC</option>
+                  <option value="ST">ST</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Course Preference</label>
+                <select id="pred-course">
+                  <option value="B.Tech, CSE">B.Tech, CSE</option>
+                  <option value="B.Tech, ECE">B.Tech, ECE</option>
+                  <option value="B.Tech, ME">B.Tech, ME</option>
+                </select>
+              </div>
+              <button class="btn-predict-submit" id="btn-run-predict">Predict</button>
+            </div>
+
+            <div class="section-title-row" style="margin-top: 24px;">
+              <h4>College You Might Get</h4>
+            </div>
+
+            <!-- Prediction Results -->
+            <div id="prediction-results" class="predict-results-list">
+              <!-- Result 1: CET (85%) -->
+              <div class="predict-card">
+                <div class="predict-details">
+                  <div class="predict-title-row">
+                    <h5>College of Engineering Trivandrum</h5>
+                    <span class="badge-high">High Chance</span>
+                  </div>
+                  <p class="score-line">Your Score: 15000</p>
+                  <p class="closing-line">Closing Rank: 18000</p>
+                </div>
+                <div class="predict-circle high">85%</div>
+              </div>
+
+              <!-- Result 2: MEC (50%) -->
+              <div class="predict-card">
+                <div class="predict-details">
+                  <div class="predict-title-row">
+                    <h5>Model Engineering College</h5>
+                    <span class="badge-mod">Moderate Chance</span>
+                  </div>
+                  <p class="score-line">Your Score: 15000</p>
+                  <p class="closing-line">Closing Rank: 14000</p>
+                </div>
+                <div class="predict-circle mod">50%</div>
+              </div>
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="disclaimer-note">
+              <i class="fa-solid fa-circle-info"></i>
+              <span>Prediction is based on previous year's trends. Actual results may contain slight changes.</span>
+            </div>
+          </div>
+
+          <!-- 5. PROFILE SCREEN (Doc1.pdf Screen 5) -->
+          <div id="screen-profile" class="app-screen">
+            <div class="screen-appbar">
+              <button class="back-btn nav-to" data-target="home"><i class="fa-solid fa-chevron-left"></i></button>
+              <h3>Profile</h3>
+              <button class="icon-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            </div>
+
+            <!-- Profile Card -->
+            <div class="profile-card">
+              <div class="profile-avatar-large">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300" alt="Lithu P L">
+              </div>
+              <h3 class="profile-name">Lithu P L</h3>
+              <span class="profile-email">lithu.pl@peergrid.edu</span>
+            </div>
+
+            <!-- Settings / Info Options List -->
+            <div class="settings-list-card">
+              <div class="settings-item">
+                <div class="settings-icon"><i class="fa-solid fa-school"></i></div>
+                <div class="settings-text">
+                  <h6>College</h6>
+                  <p>college of engineering poonjar</p>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+              </div>
+
+              <div class="settings-item">
+                <div class="settings-icon"><i class="fa-solid fa-palette"></i></div>
+                <div class="settings-text">
+                  <h6>Hobbies</h6>
+                  <p>cooking, dance, etc</p>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+              </div>
+
+              <div class="settings-item">
+                <div class="settings-icon"><i class="fa-solid fa-comment-dots"></i></div>
+                <div class="settings-text">
+                  <h6>Chats</h6>
+                  <p>theme, wallpaper, chat history</p>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+              </div>
+
+              <div class="settings-item">
+                <div class="settings-icon"><i class="fa-solid fa-hard-drive"></i></div>
+                <div class="settings-text">
+                  <h6>Storage and Data</h6>
+                  <p>network usage, auto-download</p>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+              </div>
+
+              <div class="settings-item">
+                <div class="settings-icon"><i class="fa-solid fa-key"></i></div>
+                <div class="settings-text">
+                  <h6>Accounts</h6>
+                  <p>security, accounts, change number</p>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+              </div>
+
+              <div class="settings-item">
+                <div class="settings-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="settings-text">
+                  <h6>Privacy</h6>
+                  <p>block, privacy, chat lists</p>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+              </div>
+            </div>
+
+            <button class="btn-logout nav-to" data-target="auth"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</button>
+          </div>
+
+          <!-- 6. COLLEGE & REVIEWS (Doc1.pdf Screen 6) -->
+          <div id="screen-college-detail" class="app-screen">
+            <div class="screen-appbar">
+              <button class="back-btn nav-to" data-target="home"><i class="fa-solid fa-chevron-left"></i></button>
+              <h3 style="font-size: 14px;">College of Engineering Trivandrum</h3>
+              <button class="icon-btn"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+
+            <!-- College Campus Photo -->
+            <div class="college-hero-photo">
+              <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=800" alt="CET Campus">
+            </div>
+
+            <div class="college-title-block">
+              <h4>College of Engineering Trivandrum</h4>
+              <p><i class="fa-solid fa-location-dot"></i> Thiruvananthapuram • Est. 1939</p>
+            </div>
+
+            <!-- Rating Breakdown Card -->
+            <div class="rating-breakdown-card">
+              <div class="rating-left">
+                <h2>4.6 <i class="fa-solid fa-star"></i></h2>
+                <span>(120 reviews)</span>
+              </div>
+              <div class="rating-bars">
+                <div class="bar-row"><span>5</span><div class="progress-bar"><div class="fill" style="width: 72%;"></div></div></div>
+                <div class="bar-row"><span>4</span><div class="progress-bar"><div class="fill" style="width: 18%;"></div></div></div>
+                <div class="bar-row"><span>3</span><div class="progress-bar"><div class="fill" style="width: 5%;"></div></div></div>
+                <div class="bar-row"><span>2</span><div class="progress-bar"><div class="fill" style="width: 3%;"></div></div></div>
+                <div class="bar-row"><span>1</span><div class="progress-bar"><div class="fill" style="width: 2%;"></div></div></div>
+              </div>
+            </div>
+
+            <div class="section-title-row" style="margin-top: 24px;">
+              <h4>Student Reviews</h4>
+              <button class="btn-write-review" onclick="openReviewModal()">+ Write Review</button>
+            </div>
+
+            <!-- Reviews List matching Doc1.pdf Screen 6 -->
+            <div class="reviews-list">
+              <!-- Review 1: Arjun S -->
+              <div class="review-card">
+                <div class="review-header">
+                  <div class="reviewer-avatar">AS</div>
+                  <div class="reviewer-meta">
+                    <h6>Arjun S</h6>
+                    <div class="stars">
+                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="review-text">Good campus environment and active student community. Lots of opportunities for growth.</p>
+                <div class="review-reactions">
+                  <span class="react-btn" onclick="toggleLike(this)"><i class="fa-regular fa-thumbs-up"></i> 8</span>
+                  <span class="react-btn"><i class="fa-regular fa-comment"></i> 9</span>
+                </div>
+              </div>
+
+              <!-- Review 2: Meera M -->
+              <div class="review-card">
+                <div class="review-header">
+                  <div class="reviewer-avatar">MM</div>
+                  <div class="reviewer-meta">
+                    <h6>Meera M</h6>
+                    <div class="stars">
+                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="review-text">Great infrastructure and faculty. Placements are very good.</p>
+                <div class="review-reactions">
+                  <span class="react-btn" onclick="toggleLike(this)"><i class="fa-regular fa-thumbs-up"></i> 28</span>
+                  <span class="react-btn"><i class="fa-regular fa-comment"></i> 31</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. AUTH / LOGIN SCREEN -->
+          <div id="screen-auth" class="app-screen">
+            <div class="auth-container">
+              <div class="auth-brand">
+                <i class="fa-solid fa-circle-nodes"></i>
+                <h2>PeerGrid</h2>
+              </div>
+              <h3>Welcome Back</h3>
+              <p>Sign in to explore colleges, campus events, and connect with peers.</p>
+
+              <div class="form-group" style="margin-top: 24px;">
+                <label>Email Address</label>
+                <input type="email" value="lithu.pl@peergrid.edu">
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" value="••••••••••••">
+              </div>
+
+              <button class="btn-predict-submit nav-to" data-target="home" style="margin-top: 18px;">Sign In</button>
+
+              <div class="social-divider"><span>OR CONTINUE WITH</span></div>
+
+              <div class="social-buttons-row">
+                <button class="btn-social nav-to" data-target="home"><i class="fa-brands fa-google" style="color: #ea4335;"></i> Google</button>
+                <button class="btn-social nav-to" data-target="home"><i class="fa-brands fa-facebook" style="color: #1877f2;"></i> Facebook</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ALL COLLEGES SCREEN -->
+          <div id="screen-colleges" class="app-screen">
+            <div class="screen-appbar">
+              <button class="back-btn nav-to" data-target="home"><i class="fa-solid fa-chevron-left"></i></button>
+              <h3>Discover Colleges</h3>
+              <button class="icon-btn"><i class="fa-solid fa-filter"></i></button>
+            </div>
+            <div class="search-input-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Search colleges, cities...">
+            </div>
+            <div class="section-title-row">
+              <h4>All Engineering Colleges</h4>
+            </div>
+            <div class="college-cards-list">
+              <div class="college-card nav-to" data-target="college-detail">
+                <div class="card-thumb"><img src="https://images.unsplash.com/photo-1562774053-701939374585?w=300" alt="CET"></div>
+                <div class="card-body">
+                  <h5>College of Engineering Trivandrum CET</h5>
+                  <div class="card-meta"><span>120 Reviews</span><span class="rating"><i class="fa-solid fa-star"></i> 4.8</span></div>
+                  <div class="card-location"><i class="fa-solid fa-location-dot"></i> Thiruvananthapuram</div>
+                </div>
+              </div>
+              <div class="college-card nav-to" data-target="college-detail">
+                <div class="card-thumb"><img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=300" alt="RIT"></div>
+                <div class="card-body">
+                  <h5>Rajiv Gandhi Institute of Technology</h5>
+                  <div class="card-meta"><span>95 Reviews</span><span class="rating"><i class="fa-solid fa-star"></i> 4.5</span></div>
+                  <div class="card-location"><i class="fa-solid fa-location-dot"></i> Kottayam</div>
+                </div>
+              </div>
+              <div class="college-card nav-to" data-target="college-detail">
+                <div class="card-thumb"><img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=300" alt="MEC"></div>
+                <div class="card-body">
+                  <h5>Model Engineering College</h5>
+                  <div class="card-meta"><span>110 Reviews</span><span class="rating"><i class="fa-solid fa-star"></i> 4.7</span></div>
+                  <div class="card-location"><i class="fa-solid fa-location-dot"></i> Ernakulam</div>
+                </div>
+              </div>
+              <div class="college-card nav-to" data-target="college-detail">
+                <div class="card-thumb"><img src="https://images.unsplash.com/photo-1592280771190-3e2e4d571952?w=300" alt="CEP"></div>
+                <div class="card-body">
+                  <h5>College of Engineering Poonjar</h5>
+                  <div class="card-meta"><span>45 Reviews</span><span class="rating"><i class="fa-solid fa-star"></i> 4.2</span></div>
+                  <div class="card-location"><i class="fa-solid fa-location-dot"></i> Poonjar, Kottayam</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Floating Bottom Navigation Bar (Doc1.pdf) -->
+        <div class="bottom-nav-bar">
+          <button class="nav-icon-btn active nav-to" data-target="home">
+            <i class="fa-solid fa-house"></i>
+          </button>
+          <button class="nav-add-btn" id="btn-nav-add">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <button class="nav-icon-btn nav-to" data-target="colleges">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
